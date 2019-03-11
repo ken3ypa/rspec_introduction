@@ -4,10 +4,10 @@ describe MessageFilter do
   before do
     @filter = MessageFilter.new('foo')
   end
-  it 'NGワードの検出' do
+  it {
     expect(@filter).to be_detect('hello from foo')
-  end
-  it 'NGワード抜きだとメッセージを検出しない' do
+  }
+  it {
     expect(@filter).not_to be_detect('hello, world!')
-  end
+  }
 end
