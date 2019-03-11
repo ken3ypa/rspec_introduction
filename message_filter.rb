@@ -1,11 +1,12 @@
 class MessageFilter
-  def initialize(word)
-    @word = word
+  def initialize(*words)
+    @words = words
   end
 
   def detect?(text)
-    # true #仮実装。テストのテスト
-    # falseが返ってきたらすぐ崩壊する
-    text.include?(@word)
+    @words.each do |w|
+      return true if text.include?(w)
+    end
+    false
   end
 end
