@@ -12,6 +12,7 @@ describe MessageFilter do
 
   context 'with argument "foo","bar"' do
     subject {MessageFilter.new('foo', 'bar')}
+    it { is_expected.to be_detect('hello from bar') }
     it_behaves_like 'MessageFilter with argument "foo"'
   end
 end
